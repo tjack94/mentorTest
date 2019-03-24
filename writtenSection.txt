@@ -1,28 +1,51 @@
 Answer each question in a written format
 
 1. What does semantic HTML mean?
-
+  It allows you to look at the HTML and have an idea of what the rendered page will look like. For example you see a <p> tag you know that whatever is enclosed will be a paragraph or you see a <button> tag you know that is going to be a button.
 2. What is the box model?
+    In CSS it is the idea that everything is contained within a box
 
 3. What is the difference between IDs and Classes?
+    IDs are more specific and should only refer to one thing where as a class can apply to multiple elements. 
 
 4. What is z-index (CSS property) useful for?
+  It is how close an object is to the user or the screen. Items with higher Z-indexes will appear on top of or in front of items with lower z-index. It is useful if you want different elements on the page to overlap each other. By using z-index you can set the order that you want the items to be stacked in.
 
 5. Summarize what the keyword 'this' is used for?
+  it refers to a specific instance of an object. It is used to access or change properties specific to that instance.
 
 6. What is a callback? What are common uses for callbacks in JavaScript?
+  It is a function that that is passed into another function as an argument. 
+  They are often used to make sure that code is ran in the order it needs to be in order for the application to function properly.
+  I use them a lot with the SetState function in React because sometimes I'll have one function update state then call another function that will use the updated state to perform task, but in order to make sure the second function isn't called before the state is updated I have setState call the second function as a callback after the state has been updated
 
 7. What is a closure and why is it useful?
+  Function that has access to the scope from where it was called. Has access to variables in its original scope. Used to access variables outside of its scope.
 
 8. How does a prototype work?
+  It is a collection of functions or properties that are uniform across all instances of a class. Allows them to only be loaded once and not each time the class is rendered. This reduces the memory needed by the application.
 
 9. Describe what a component-based framework/library is?
+  It allows different parts of the application or page to be broken down in to smaller reusable components this allows for reusability and to only change parts of the application that need to be changed. 
 
 10. What is the component lifecycle in React?
+It is the cycle all components go through from the time they are loaded to the time unmounted. There 
+are several built in methods to access the different phases of the lifecycle some of these include:
+Component will mount
+Component did mount
+Component will receive props
+Component will unmount 
+Compound will update
+Component did update
+
 
 11. What is REST? (not just a description of the acronym)
+it stands for Representational State Transfer which is an HTTP protocol used for transferring and sharing data. REST ensures the separation of client and server which means that the two do not need to know anything about each other. REST uses the HTML Verbs to handle requests (GET, POST, PUT, and DELETE)
 
 12. Name three common ways of getting data from a request (in Express.JS):
+   Url Parameters
+   Query Parameters
+   Body of the request 
 
 
 
@@ -38,8 +61,16 @@ email varchar(255)
 
 -Get all users:
 
--Create a new user with the name of 'your name' and an email of 'fake@fake.com':
+SELECT * FROM users 
 
--Update the newly created user's name to 'Bobby Boy':
+-Create a new user with the name of 'your name' and an email of 'fake@fake.com': 
 
--Delete the newly updated user:
+INSERT INTO users (name, email ) VALUES ('your name', 'fake@fake.com' )
+
+-Update the newly created user's name to 'Bobby Boy': 
+
+UPDATE users SET name = 'Bobby Boy' WHERE email = 'fake@fake.com'
+
+-Delete the newly updated user: 
+
+DELETE FROM users WHERE email = 'fake@fake.com'
